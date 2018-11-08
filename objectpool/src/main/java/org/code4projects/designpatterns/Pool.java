@@ -39,6 +39,11 @@ public class Pool<T> {
         this.maxSize = maxSize;
         // at the beginning allocate an empty pool
         this.freeObjects = new ArrayList<>(maxSize);
+        // if you want to preallocate your pool you can uncomment the following
+        // code. Everything will still work:
+        //
+        // for (int i=0; i<maxSize; ++i)
+        //     freeObjects.add(factory.createObject());
     }
 
     public T newObject() {
